@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head><title>JSF Event Handling</title>
+</h:head>
+<h:body>
+	<h2>JDBC Integration Example</h2>
+        <h:form>
+        
+        <h:dataTable value="#{datos.alumnose}" var="a"
+		styleClass="authorTable" headerClass="authorTableHeader"
+		rowClasses="authorTableOddRow,authorTableEvenRow">
+            
+		<h:column>
+			<f:facet name="header">idAlumno</f:facet>
+			#{a.idAlumno}
+		</h:column>
+            <h:column>
+			<f:facet name="header">alumNombre</f:facet>
+			#{a.alumNombre}
+		</h:column>
+             <h:column>
+			<f:facet name="header">alumApellido</f:facet>
+			#{a.alumApellido}
+		</h:column>
+             <h:column>
+			<f:facet name="header">alumCorreo</f:facet>
+			#{a.alumCorreo}
+		</h:column>
+             <h:column>
+			<f:facet name="header">alumDni</f:facet>
+			#{a.alumDni}
+		</h:column>
+            
+            <h:column>
+               <f:facet name = "header">Delete</f:facet>
+               <h:commandButton value = "Delete" 
+                  action = "#{datos.deleteAlumnos(a.idAlumno)}">   
+               </h:commandButton>
+            </h:column>
+            
+	</h:dataTable>
+            </h:form>
+</h:body>
+</html>
+
+

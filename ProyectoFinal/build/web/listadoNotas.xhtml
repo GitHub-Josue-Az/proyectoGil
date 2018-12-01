@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head><title>JSF Event Handling</title>
+</h:head>
+<h:body>
+	<h2>JDBC Integration Example</h2>
+        
+        <h:form>
+        
+        <h:dataTable value="#{datos.notase}" var="n"
+		styleClass="authorTable" headerClass="authorTableHeader"
+		rowClasses="authorTableOddRow,authorTableEvenRow">
+            
+		<h:column>
+			<f:facet name="header">idNota</f:facet>
+			#{n.idNota}
+		</h:column>
+		<h:column>
+			<f:facet name="header">idCurso</f:facet>
+			#{n.idCursoNo}
+		</h:column>
+            <h:column>
+			<f:facet name="header">idAlumno</f:facet>
+			#{n.idAlumnoNo}
+		</h:column>
+            <h:column>
+			<f:facet name="header">nota1</f:facet>
+			#{n.nota1}
+		</h:column>
+            <h:column>
+			<f:facet name="header">nota2</f:facet>
+			#{n.nota2}
+		</h:column>
+            <h:column>
+			<f:facet name="header">nota3</f:facet>
+			#{n.nota3}
+		</h:column>
+            <h:column>
+			<f:facet name="header">notaPromedio</f:facet>
+			#{n.notaPromedio}
+		</h:column>
+            <h:column>
+			<f:facet name="header">cursoNombre</f:facet>
+			#{n.cursoNombre}
+		</h:column>
+           <h:column>
+			<f:facet name="header">cursoProfesor</f:facet>
+			#{n.cursoProfesor}
+		</h:column>
+             <h:column>
+			<f:facet name="header">alumNombre</f:facet>
+			#{n.alumNombre}
+		</h:column>
+             <h:column>
+			<f:facet name="header">alumApellido</f:facet>
+			#{n.alumApellido}
+		</h:column>
+             <h:column>
+			<f:facet name="header">alumCorreo</f:facet>
+			#{n.alumCorreo}
+		</h:column>
+             <h:column>
+			<f:facet name="header">alumDni</f:facet>
+			#{n.alumDni}
+		</h:column>
+            
+            <h:column>
+               <f:facet name = "header">Delete</f:facet>
+               <h:commandButton value = "Delete" 
+                  action = "#{datos.deleteNota(n.idNota)}">   
+               </h:commandButton>
+            </h:column>
+            
+	</h:dataTable>
+            </h:form>
+</h:body>
+</html>
+

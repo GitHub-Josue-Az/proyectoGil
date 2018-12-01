@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+      <h1>Pagina Inicial</h1>
+        <h:form>
+            <h:messages errorStyle="color:red;" showDetail="true"/>
+            <h:panelGrid columns="2" > 
+                <h:outputText value="id"/>
+                <h:inputText size="8" value="#{alumnos.idAlumno}"/>
+                <h:outputText value="Nombre"/>
+                <h:inputText size="8" value="#{alumnos.alumNombre}"/>
+                <h:outputText value="Apellido"/>
+                <h:inputText size="8" value="#{alumnos.alumApellido}"/>
+                <h:outputText value="Correo"/>
+                <h:inputText size="8" value="#{alumnos.alumCorreo}"/>
+                <h:outputText value="Dni"/>
+                <h:inputText size="8" value="#{alumnos.alumDni}"/>
+            </h:panelGrid> 
+            <h:commandButton value="registrarNota" id="submit" action="#{alumnos.registrarAlumno()}"/>
+            <h:commandButton value="Listar" action="#{datos.listarAlumnos()}" />
+        </h:form>
+    </h:body>
+</html>
+
